@@ -36,6 +36,17 @@ export default function HouseSize() {
             name="houseSelect"
           />
         </div>
+        <div className="row">
+          <h4>Moving date</h4>
+          <Form.Group className="col" id="date">
+            <Form.Label>Date</Form.Label>
+            <Form.Control className="form-quote" type="date" />
+          </Form.Group>
+          <Form.Group className="col" id="time">
+            <Form.Label>Time</Form.Label>
+            <Form.Control className="form-quote" type="time" />
+          </Form.Group>
+        </div>
         <div className="center">
           <Button>Next</Button>
         </div>
