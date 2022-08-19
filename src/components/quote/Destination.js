@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap";
 export default function Destination() {
   return (
     <div className="quote">
-      <h3>Destination Confirmation</h3>
+      <h3 className="mb-4">Destination Confirmation</h3>
       <div className="row">
           <p className="col">Origin</p>
           <p className="col">Kahawa Sukari</p>

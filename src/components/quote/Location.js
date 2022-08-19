@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 export default function Location() {
   return (
     <div className="quote">
-      <h3>Choose Location</h3>
+      <h3 className="mb-4">Choose Location</h3>
       <Form>
         <div className="row">
           <Form.Group className="col" id="origin">

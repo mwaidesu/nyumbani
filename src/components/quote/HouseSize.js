@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap";
 export default function HouseSize() {
   return (
     <div className="quote">
-      <h3>House Size</h3>
+      <h3 className="mb-4">House Size</h3>
       <Form>
         <div className="center">
           <Form.Check
