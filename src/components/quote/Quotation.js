@@ -15,7 +15,7 @@ export default function Quotation() {
       </div>
       <Form>
         <div className="center">
-          <Button>Accept</Button>
+          <Button type="submit">Accept</Button>
           <Button>Decline</Button>
         </div>
       </Form>

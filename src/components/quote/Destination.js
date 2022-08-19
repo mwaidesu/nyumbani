@@ -23,7 +23,7 @@ export default function Destination() {
       </div>
       <Form>
         <div className="center">
-          <Button>Next</Button>
+          <Button type="submit">Next</Button>
         </div>
       </Form>
     </div>

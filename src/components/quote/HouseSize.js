@@ -48,7 +48,7 @@ export default function HouseSize() {
           </Form.Group>
         </div>
         <div className="center">
-          <Button>Next</Button>
+          <Button type="submit">Next</Button>
         </div>
       </Form>
     </div>
