@@ -59,18 +59,18 @@ function App() {
       <AuthContext.Provider value={authData}>
         <QuoteContext.Provider value={quoteData}>
           {/* Main page goes here */}
-          <> 
+          <Container>
             {/* Other sections */}
             {/* get a quote */}
-            <Container className="quote-container">
+            
               <Location />
               <Destination />
               <HouseSize />
               <Quotation />
-            </Container>
+            
             {/* get a quote ends here */}
             {/* other sections */}
-          </>
+            </Container>
           {/* mainpage ends here */}
         </QuoteContext.Provider>
       </AuthContext.Provider>
