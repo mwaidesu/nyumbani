@@ -12,9 +12,9 @@ function App() {
   return (
     <>
       <Container className="quote-container">
+        <Location />
         <Destination />
         <HouseSize />
-        <Location />
         <Quotation />
       </Container>
     </>

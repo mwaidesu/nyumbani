@@ -6,13 +6,24 @@ button{
   background-color: #FFBA00 !important;
   align-items: center;
   justify-content: center;
+  margin: 16px !important;
+  
 }
 .quote{
   background-color: #454141;
   color: white;
+  padding: 16px;
 }
 .center{
   display: flex;
   justify-content: center;
   align-items: center;
+  
+}
+.form-select{
+    background-color: lightgray !important;
+    width: 50% !important;
+}
+.form-quote{
+    background-color: lightgray !important;
 }
