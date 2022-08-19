@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import "./App.css";
 import Signup from "./components/auth/Signup";
 import Signin from "./components/auth/Signin";
@@ -7,16 +8,40 @@ import Quotation from "./components/quote/Quotation";
 import Location from "./components/quote/Location";
 
 import { Container } from "react-bootstrap";
+import { AuthContext } from "./context/AuthContext";
+import { QuoteContext } from "./context/QuoteContext";
 
 function App() {
+const [quote, setQuote] = useState({
+  origin: "",
+  destination: "",
+  movers: "",
+  distance: "",
+  houseSelect: "",
+  date: "",
+  time: "",
+  total: ""
+});
+
+
+
+const quoteData = {
+  quote,
+  setQuote
+};
+
   return (
     <>
-      <Container className="quote-container">
-        <Location />
-        <Destination />
-        <HouseSize />
-        <Quotation />
-      </Container>
+      <AuthContext.Provider>
+        <QuoteContext.Provider value={quoteData}>
+          <Container className="quote-container">
+            <Location />
+            <Destination />
+            <HouseSize />
+            <Quotation />
+          </Container>
+        </QuoteContext.Provider>
+      </AuthContext.Provider>
     </>
   );
 }
