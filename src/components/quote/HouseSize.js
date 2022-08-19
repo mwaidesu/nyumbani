@@ -6,7 +6,9 @@ export default function HouseSize() {
     <div className='quote'>
         <h3>House Size</h3>
         <Form>
+        <div className='center'>
             <Button>Next</Button>
+        </div>
         </Form>
     </div>
   )

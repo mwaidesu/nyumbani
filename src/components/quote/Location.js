@@ -7,7 +7,10 @@ export default function Location() {
         <h3>Choose Location</h3>
         <Form>
             
-            <Button>Next</Button>
+            <div className='center'>
+                <Button>Next</Button>
+            </div>
+            
         </Form>
     </div>
   )
