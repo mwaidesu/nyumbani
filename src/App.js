@@ -1,14 +1,23 @@
+import "./App.css";
+import Signup from "./components/auth/Signup";
+import Signin from "./components/auth/Signin";
+import Destination from "./components/quote/Destination";
+import HouseSize from "./components/quote/HouseSize";
+import Quotation from "./components/quote/Quotation";
+import Location from "./components/quote/Location";
 
-import './App.css';
-import Signup from './components/auth/Signup';
-import Signin from './components/auth/Signin';
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <Signup/>
-      <Signin/>
-    </div>
+    <>
+      <Container className="quote-container">
+        <Destination />
+        <HouseSize />
+        <Location />
+        <Quotation />
+      </Container>
+    </>
   );
 }
 

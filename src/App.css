@@ -4,4 +4,10 @@
 }
 button{
   background-color: #FFBA00 !important;
+  align-items: center;
+  justify-content: center;
+}
+.quote{
+  background-color: #454141;
+  color: white;
 }
