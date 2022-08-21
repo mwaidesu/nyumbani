@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = (props) => {
   return (
-    <div calssName="card">
+    <div className="card">
       <div className="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <div className="flex flex-col items-center pb-10">
           <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mt-3">

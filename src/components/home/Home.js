@@ -1,24 +1,29 @@
 import React from "react";
 import Card from "./Card";
+import Switch from "./switchingComponents/Switch";
 
 const Home = () => {
   return (
     <div>
-      <div className="container">
+      <div>
       <img
         className="homeImage"
         src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="Homepage pic"
       />
-      <div class="centered text-white">
+      {/* <div class="centered text-white">
         <h1 className="text-7xl">Utahama Lini?</h1>
         <p className="text-xl">"We like to move it, move it. Let us help you move it, move it."</p>
         <span> - NyumbaniMove™</span>
 
-      </div>
+      </div> */}
       </div>
 
       {/* //moving component/////////////////////// */}
+
+      <div className="mt-9">
+        <Switch/>
+      </div>
 
       <div className="text-center py-10">
         <h2 className="font-bold">Our Moving Services</h2>
@@ -28,6 +33,8 @@ const Home = () => {
           your next stop in life much easier.{" "}
         </h4>
       </div>
+
+
 
       <div className = "cards flex justify-between">
       <Card
