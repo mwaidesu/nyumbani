@@ -9,13 +9,12 @@ function SignIn() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const { signinCallback, signoutCallback } = useContext(AuthContext);
+  const { signinCallback } = useContext(AuthContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      console.log("perform signin");
 
       setError("");
       setLoading(true);
@@ -25,16 +24,9 @@ function SignIn() {
         passwordRef.current.value
       );
 
-      console.log("response below");
-
-      console.log(
-        `email: ${emailRef.current.value} and pw: ${passwordRef.current.value}`
-      );
-
-      console.log(res);
-
       if (res.id) {
         console.log("success");
+        // history.push("/");
       } else if (res.errors) {
         console.log(`errors: ${res.errors}`);
         setError(res.errors);

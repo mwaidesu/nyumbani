@@ -106,8 +106,8 @@ function App() {
             {/* get a quote */}
             
               
-              <Signin />
-              {/* <Signup/> */}
+              {/* <Signin /> */}
+              <Signup/>
             
             
             {/* get a quote ends here */}
