@@ -2,26 +2,20 @@ import { useState } from "react";
 import "./App.css";
 import Signup from "./components/auth/Signup";
 import Signin from "./components/auth/Signin";
-import Destination from "./components/quote/Destination";
-import HouseSize from "./components/quote/HouseSize";
-import Quotation from "./components/quote/Quotation";
-import Location from "./components/quote/Location";
-
-import { Container } from "react-bootstrap";
 import { AuthContext } from "./context/AuthContext";
-import { QuoteContext } from "./context/QuoteContext";
+// import { QuoteContext } from "./context/QuoteContext";
 
 function App() {
-  const [quote, setQuote] = useState({
-    origin: "",
-    destination: "",
-    movers: "",
-    distance: "",
-    houseSelect: "",
-    date: "",
-    time: "",
-    total: "",
-  });
+  // const [quote, setQuote] = useState({
+  //   origin: "",
+  //   destination: "",
+  //   movers: "",
+  //   distance: "",
+  //   houseSelect: "",
+  //   date: "",
+  //   time: "",
+  //   total: "",
+  // });
 
   const [auth, setAuth] = useState({
     name: "",
@@ -41,10 +35,10 @@ function App() {
     console.log("perform sign out");
   }
 
-  const quoteData = {
-    quote,
-    setQuote,
-  };
+  // const quoteData = {
+  //   quote,
+  //   setQuote,
+  // };
 
   const authData = {
     auth,
@@ -57,22 +51,22 @@ function App() {
   return (
     <>
       <AuthContext.Provider value={authData}>
-        <QuoteContext.Provider value={quoteData}>
+        {/* <QuoteContext.Provider value={quoteData}> */}
           {/* Main page goes here */}
-          <Container>
+          {/* <Container> */}
             {/* Other sections */}
             {/* get a quote */}
             
-              <Location />
-              <Destination />
-              <HouseSize />
-              <Quotation />
+              
+              <Signin />
+              <Signup/>
+            
             
             {/* get a quote ends here */}
             {/* other sections */}
-            </Container>
+            {/* </Container> */}
           {/* mainpage ends here */}
-        </QuoteContext.Provider>
+        {/* </QuoteContext.Provider> */}
       </AuthContext.Provider>
     </>
   );
