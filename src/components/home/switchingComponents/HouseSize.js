@@ -7,6 +7,7 @@ const HouseSize = ({formData, setFormData}) => {
 
 <form>
 
+<div className="mb-6">
 <label for="house" class="block mb-2 text-sm font-medium text-white dark:text-gray-400">House Size</label>
 <select id="house" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={formData.house} onChange={(e) => setFormData({...formData, house: e.target.value})}>
   <option selected>Choose your house size</option>
@@ -15,6 +16,7 @@ const HouseSize = ({formData, setFormData}) => {
   <option value="Bedsitter">Bedsitter</option>
   <option value="Studio">Studio</option>
 </select>
+</div>
 
 
   <div className ="mb-6">
