@@ -71,12 +71,6 @@
   margin: 0 auto;
 }
 
-/* @media (min-width: 700px) {
-  .card {
-    display: flex;
-  }
-} */
-
 @media (max-width: 1050px) {
   .centered {
     display: none;
