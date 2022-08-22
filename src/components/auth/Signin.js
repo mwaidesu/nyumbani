@@ -1,88 +1,6 @@
-// import React, { useRef, useState, useContext } from "react";
-// import { Form, Button, Card, Alert, Container } from "react-bootstrap";
-// // import { OurAuthContext } from "../contexts/OurAuthContext";
-// import { Link, useHistory } from "react-router-dom";
-
-// export default function Login() {
-//   const emailRef = useRef();
-//   const passwordRef = useRef();
-  
-// //   const { login, setCurrentUser, setMemberId } = useContext(OurAuthContext);
-  
-
-//   const [error, setError] = useState("");
-//   const [loading, setLoading] = useState(false);
-//   const history = useHistory();
-
-//   async function handleSubmit(e) {
-//     e.preventDefault();
-
-//     try {
-//       console.log('perform signin');
-//     //   setError("");
-//     //   setLoading(true);
-      
-//     //   const res = await login(emailRef.current.value, passwordRef.current.value);
-
-//     //   if (res.success){
-//     //     setCurrentUser(res.member_email);
-//     //     setMemberId(res.member_id);
-//     //     console.log(res.member_id)
-//     //     localStorage.setItem("savedUser", res.member_email);
-//     //     localStorage.setItem("savedId", res.member_id);
-//     //     history.push("/");
-//     //   }
-//     //   else if (res.error){
-//     //     setError(res.error);
-//     //   }
-     
-//     } catch {
-//       setError("Failed to log in");
-//     }
-
-//     // setLoading(false);
-//   }
-
-//   return (
-//     <>
-//       <Container
-//         className="d-flex justify-content-center mt-4"
-//         style={{ minHeight: "100vh" }}
-//       >
-//         <div className="w-100" style={{ maxWidth: "500px" }}>
-//           <Card>
-//             <Card.Body className="card-form">
-//               <h3 className="mb-4">Sign In</h3>
-//               {error && <Alert variant="danger">{error}</Alert>}
-//               <Form onSubmit={handleSubmit}>
-//                 <Form.Group id="email">
-//                   <Form.Control placeholder="Email" type="email" ref={emailRef} required />
-//                 </Form.Group>
-//                 <Form.Group id="password">
-//                   <Form.Control placeholder="Password" type="password" ref={passwordRef} required />
-//                 </Form.Group>
-//                 <Button
-//                   variant="secondary"
-//                   disabled={loading}
-//                   className="w-100 mb-4"
-//                   type="submit"
-//                 >
-//                   Sign In
-//                 </Button>
-//               </Form>
-//             </Card.Body>
-//           </Card>
-//           <div className="w-100 text-center mt-2">
-//             {/* Need an account? <Link to="/signup">Sign Up</Link> */}
-//             Need an account? Sign Up
-//           </div>
-//         </div>
-//       </Container>
-//     </>
-//   );
-// }
 import React, { useRef, useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 function SignIn() {
   const emailRef = useRef();
@@ -91,37 +9,57 @@ function SignIn() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  const { signinCallback, signoutCallback } = useContext(AuthContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
       console.log("perform signin");
-      //   setError("");
-      //   setLoading(true);
 
-      //   const res = await login(emailRef.current.value, passwordRef.current.value);
+      setError("");
+      setLoading(true);
 
-      //   if (res.success){
-      //     setCurrentUser(res.member_email);
-      //     setMemberId(res.member_id);
-      //     console.log(res.member_id)
-      //     localStorage.setItem("savedUser", res.member_email);
-      //     localStorage.setItem("savedId", res.member_id);
-      //     history.push("/");
-      //   }
-      //   else if (res.error){
-      //     setError(res.error);
-      //   }
+      const res = await signinCallback(
+        emailRef.current.value,
+        passwordRef.current.value
+      );
+
+      console.log("response below");
+
+      console.log(
+        `email: ${emailRef.current.value} and pw: ${passwordRef.current.value}`
+      );
+
+      console.log(res);
+
+      if (res.id) {
+        console.log("success");
+      } else if (res.errors) {
+        console.log(`errors: ${res.errors}`);
+        setError(res.errors);
+      }
+
     } catch {
       setError("Failed to log in");
     }
 
-    // setLoading(false);
+    setLoading(false);
   }
 
   return (
     <div className="w-2/5 items-center mt-4 login">
+      {error && (
+        <div
+          style={{
+            backgroundColor: "pink",
+            height: "30px",
+            margin: "16px"
+          }}
+        >
+          {error}
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
         <h2 className="text-4xl my-5">Sign In</h2>
 

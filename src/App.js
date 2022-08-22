@@ -20,19 +20,67 @@ function App() {
   const [auth, setAuth] = useState({
     name: "",
     email: "",
-    phone: "",
-    password: "",
-    currentUser: "",
+    phone: ""
   });
 
-  function signinCallback() {
-    console.log("perform sign in");
+  async function signinCallback(email, password) {
+   
+    const route = "https://nyumbani-move.herokuapp.com/api/login";
+
+    console.log(route);
+
+   return await fetch(route, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    }).then((r) => {
+      console.log("inside fetch");
+      return r.json()
+    });
+    
   }
-  function signupCallback() {
-    console.log("perform sign up");
+
+  async function signupCallback(name, email, phone, password) {
+   
+    const route = "https://nyumbani-move.herokuapp.com/api/signup";
+
+    return await fetch(route, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        password,
+      }),
+    }).then((r) => {
+      return r.json()
+    });
   }
-  function signoutCallback() {
-    console.log("perform sign out");
+
+  // function signinCallback() {
+  //   console.log("perform sign in");
+  // }
+  // function signupCallback() {
+  //   console.log("perform sign up");
+  // }
+  // function signoutCallback() {
+  //   console.log("perform sign out");
+  // }
+
+  async function signoutCallback() {
+    const route = "https://nyumbani-move.herokuapp.com/api/signout";
+
+    await fetch(route, { method: "DELETE" })
+      // .then(history.push("/"));
+      .then(console.log("signed out"));
   }
 
   // const quoteData = {
@@ -59,7 +107,7 @@ function App() {
             
               
               <Signin />
-              <Signup/>
+              {/* <Signup/> */}
             
             
             {/* get a quote ends here */}
