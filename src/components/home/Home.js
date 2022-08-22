@@ -6,7 +6,7 @@ import Switch from "./switchingComponents/Switch";
 const Home = () => {
   return (
     <div>
-      <div className="bg-amber-100 py-4">
+      <div className="bg-amber-100 pb-4">
       <img
         className="homeImage mx-auto "
         src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
