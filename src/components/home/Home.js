@@ -1,31 +1,32 @@
 import React from "react";
+import Footer from "../footer/Footer";
 import Card from "./Card";
 import Switch from "./switchingComponents/Switch";
 
 const Home = () => {
   return (
     <div>
-      <div>
+      <div className="bg-amber-100 py-4">
       <img
-        className="homeImage"
+        className="homeImage mx-auto "
         src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="Homepage pic"
       />
-      {/* <div class="centered text-white">
+      <div class="centered text-white">
         <h1 className="text-7xl">Utahama Lini?</h1>
         <p className="text-xl">"We like to move it, move it. Let us help you move it, move it."</p>
         <span> - NyumbaniMove™</span>
 
-      </div> */}
+      </div>
       </div>
 
       {/* //moving component/////////////////////// */}
 
-      <div className="mt-9">
+      <div className="">
         <Switch/>
       </div>
 
-      <div className="text-center py-10">
+      <div className="text-center py-9 my-9">
         <h2 className="font-bold">Our Moving Services</h2>
         <h4 className="py-4">
           {" "}
@@ -34,8 +35,7 @@ const Home = () => {
         </h4>
       </div>
 
-
-
+      <div className="bg-amber-100 py-4">
       <div className = "cards flex justify-between">
       <Card
 
@@ -77,6 +77,13 @@ const Home = () => {
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
         />
       </div>
+      </div>
+
+      <Footer/>
+
+
+
+     
 
 
     </div>
