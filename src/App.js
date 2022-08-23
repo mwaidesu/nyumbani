@@ -4,7 +4,7 @@ import "./App.css";
 import Signup from "./components/auth/Signup";
 import Signin from "./components/auth/Signin";
 import { AuthContext } from "./context/AuthContext";
-// import { QuoteContext } from "./context/QuoteContext";
+
 
 function App() {
   // const [quote, setQuote] = useState({
