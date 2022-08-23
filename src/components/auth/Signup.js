@@ -49,7 +49,7 @@ function SignUp() {
   }
 
   return (
-    <div className="w-2/5 items-center mt-4 login">
+    <div className="w-2/5 items-center mt-4 login mx-auto">
       {error && (
         <div
           style={{
@@ -62,7 +62,7 @@ function SignUp() {
         </div>
       )}
       <form onSubmit={handleSubmit}>
-        <h2 className="text-4xl my-5 mx-auto">Sign Up</h2>
+        <h2 className="text-4xl my-5 ">Sign Up</h2>
         <div class="mb-6">
           <label
             for="name"
