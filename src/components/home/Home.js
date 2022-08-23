@@ -8,6 +8,7 @@ const Home = () => {
   return (
     <div>
       <Navbar/>
+      
       <div className="bg-amber-100 pb-4">
       <img
         className="homeImage mx-auto "
