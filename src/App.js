@@ -6,6 +6,7 @@ import Signin from "./components/auth/Signin";
 import { AuthContext } from "./context/AuthContext";
 import Home from "./components/home/Home";
 import { Route, Switch } from "react-router-dom";
+import Landin from "./components/home/Landin";
 
 function App() {
   // const [quote, setQuote] = useState({
@@ -92,13 +93,13 @@ function App() {
       <div className="App">
       {/* <Navbar user={user} setUser={setUser} /> */}
       <main>
-        {/* {user ? ( */}
-          {/* <Switch>
+        {authData ? (
+          <Switch>
             <Route path="/">
               <Home/>
             </Route>
-          </Switch> */}
-        {/* ) : ( */}
+          </Switch>
+        ) : (
           <Switch>
             <Route path="/signup">
               <Signup/>
@@ -107,14 +108,10 @@ function App() {
               <Signin/>
             </Route>
             <Route exact path="/">
-              <Home/>
+              <Landin/>
             </Route>
-
-            {/* <Route path="/posts/:id">
-            <Article/>
-          </Route> */}
           </Switch>
-        {/* )} */}
+        )} 
       </main>
     </div>
             
