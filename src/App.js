@@ -4,6 +4,8 @@ import "./App.css";
 import Signup from "./components/auth/Signup";
 import Signin from "./components/auth/Signin";
 import { AuthContext } from "./context/AuthContext";
+import Home from "./components/home/Home";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   // const [quote, setQuote] = useState({
@@ -65,16 +67,6 @@ function App() {
     });
   }
 
-  // function signinCallback() {
-  //   console.log("perform sign in");
-  // }
-  // function signupCallback() {
-  //   console.log("perform sign up");
-  // }
-  // function signoutCallback() {
-  //   console.log("perform sign out");
-  // }
-
   async function signoutCallback() {
     const route = "https://nyumbani-move.herokuapp.com/api/signout";
 
@@ -83,10 +75,6 @@ function App() {
       .then(console.log("signed out"));
   }
 
-  // const quoteData = {
-  //   quote,
-  //   setQuote,
-  // };
 
   const authData = {
     auth,
@@ -99,22 +87,37 @@ function App() {
   return (
     <>
       <AuthContext.Provider value={authData}>
-        {/* <QuoteContext.Provider value={quoteData}> */}
-          {/* Main page goes here */}
-          {/* <Container> */}
-            {/* Other sections */}
-            {/* get a quote */}
             
               
-              {/* <Signin /> */}
+      <div className="App">
+      {/* <Navbar user={user} setUser={setUser} /> */}
+      <main>
+        {/* {user ? ( */}
+          {/* <Switch>
+            <Route path="/">
+              <Home/>
+            </Route>
+          </Switch> */}
+        {/* ) : ( */}
+          <Switch>
+            <Route path="/signup">
               <Signup/>
+            </Route>
+            <Route path="/signin">
+              <Signin/>
+            </Route>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+
+            {/* <Route path="/posts/:id">
+            <Article/>
+          </Route> */}
+          </Switch>
+        {/* )} */}
+      </main>
+    </div>
             
-            
-            {/* get a quote ends here */}
-            {/* other sections */}
-            {/* </Container> */}
-          {/* mainpage ends here */}
-        {/* </QuoteContext.Provider> */}
       </AuthContext.Provider>
     </>
   );

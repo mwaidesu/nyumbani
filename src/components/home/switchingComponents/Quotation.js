@@ -3,20 +3,20 @@ import React from "react";
 
 function Quotation({formData}) {
   return (
-    <div className="quote">
+    <div className="">
       {/* <h3 className="mb-4">Quotation</h3> */}
-      <div className="row flex my-3">
-        <p className="col text-2xl">Total:</p>
-        <p className="col ml-4 text-2xl">Kshs 14,200</p>
+      <div className="flex my-3">
+        <p className="text-2xl">Total:</p>
+        <p className="ml-4 text-2xl">Kshs 14,200</p>
       </div>
-      <div className="row flex mb-2">
-        <p className="col text-2xl">Moving date:</p>
-        <p className="col ml-4 text-2xl">{formData.date}</p>
+      <div className="flex mb-2">
+        <p className=" text-2xl">Moving date:</p>
+        <p className=" ml-4 text-2xl">{formData.date}</p>
       </div>
 
-      <div className="row flex mb-2">
-        <p className="col text-2xl">Moving Time</p>
-        <p className="col ml-4 text-2xl">{formData.time}</p>
+      <div className="r flex mb-2">
+        <p className=" text-2xl">Moving Time</p>
+        <p className=" ml-4 text-2xl">{formData.time}</p>
       </div>
       {/* <Form>
         <div className="center">

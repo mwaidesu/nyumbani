@@ -2,17 +2,19 @@ import React from "react";
 import Footer from "../footer/Footer";
 import { Navbar } from "../navbar/Navbar";
 import Cards from "./Cards";
+// import Landin from "./Landin";
 import Switch from "./switchingComponents/Switch";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-amber-100">
       <Navbar/>
       
-      <div className="bg-amber-100 pb-4">
+      <div className="w-11/12 mx-auto">
+      <div className=" pb-4">
       <img
-        className="homeImage mx-auto "
-        src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        className="homeImage mx-auto  w-4/5"
+        src="https://images.unsplash.com/photo-1619302820124-e3b9d8a7f686?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
         alt="Homepage pic"
       />
       <div class="centered text-white">
@@ -22,14 +24,15 @@ const Home = () => {
 
       </div>
       </div>
+      {/* <Landin/> */}
 
       {/* //moving component/////////////////////// */}
 
-      <div className="">
+      <div className="w-4/5 mx-auto">
         <Switch/>
       </div>
 
-      <div className="text-center py-9 my-9">
+      <div className="text-center py-9 my-9 bg-white w-4/5 mx-auto">
         <h2 className="font-semibold text-3xl">Our Moving Services</h2>
         <h4 className="py-4 text-xl">
           We believe in providing flexible moving services to make getting to
@@ -38,6 +41,7 @@ const Home = () => {
       </div>
 
       <Cards/>
+      </div>
       <Footer/>
     </div>
   );

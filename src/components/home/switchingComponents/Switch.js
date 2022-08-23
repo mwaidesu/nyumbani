@@ -63,7 +63,7 @@ const Switch = () => {
       <div className="switch-container">
         <h1 className="switch-header text-4xl text-center">{FormTitles[page]}</h1>
 
-        <div className="switch-body w-3/5">{PageDisplay()}</div>
+        <div className="switch-body w-3/5 mx-auto">{PageDisplay()}</div>
       </div>
 
       <div className="switch-footer text-center mt-6">

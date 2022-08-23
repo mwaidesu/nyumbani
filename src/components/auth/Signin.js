@@ -40,7 +40,8 @@ function SignIn() {
   }
 
   return (
-    <div className="w-2/5 items-center mt-4 login">
+    <div className="bg-amber-100 signin flex">
+    <div className="w-2/5 items-center mx-auto bg-white border rounded-lg p-7 my-auto shadow-2xl sign-in">
       {error && (
         <div
           style={{
@@ -67,7 +68,7 @@ function SignIn() {
             type="email"
             id="email"
             class="bg-gray-50 border border-amber-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="name@flowbite.com"
+            placeholder="name@email.com"
             required
           />
         </div>
@@ -84,6 +85,7 @@ function SignIn() {
             type="password"
             id="password"
             class="bg-gray-50 border border-amber-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Enter your password"
             required
           />
         </div>
@@ -91,16 +93,20 @@ function SignIn() {
         <button
           disabled={loading}
           type="submit"
-          class="text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800"
+          class="text-white bg-amber-500 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800"
         >
           Sign In
         </button>
       </form>
 
-      <div>
-        <span className="float-right">Don't have an account? Sign Up</span>
+
+      <Link to="/signup">
+      <div className="mb-4">
+        <span className="float-right"><u>Don't have an account? Sign Up</u></span>
       </div>
-    </div>
+      </Link>
+      </div>
+      </div>
   );
 }
 

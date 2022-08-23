@@ -49,7 +49,8 @@ function SignUp() {
   }
 
   return (
-    <div className="w-2/5 items-center mt-4 login">
+    <div className="bg-amber-100 signup flex">
+    <div className="w-2/5 items-center mx-auto border rounded-lg p-7 shadow-2xl my-auto sign-up bg-white ">
       {error && (
         <div
           style={{
@@ -75,7 +76,7 @@ function SignUp() {
             type="text"
             id="name"
             class="bg-gray-50 border border-amber-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="name@email.com"
+            placeholder="name"
             required
           />
         </div>
@@ -91,7 +92,7 @@ function SignUp() {
             type="email"
             id="email"
             class="bg-gray-50 border border-amber-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="name@name.com"
+            placeholder="name@email.com"
             required
           />
         </div>
@@ -109,6 +110,7 @@ function SignUp() {
             id="phone"
             class="bg-gray-50 border border-amber-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             required
+            placeholder="0123456789"
           />
         </div>
 
@@ -125,6 +127,7 @@ function SignUp() {
             id="password"
             class="bg-gray-50 border border-amber-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             required
+            placeholder="Enter password"
           />
         </div>
 
@@ -140,6 +143,7 @@ function SignUp() {
             type="passwordConfirm"
             id="passwordConfirm"
             class="bg-gray-50 border border-amber-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder = "Confirm your password"
             required
           />
         </div>
@@ -147,15 +151,18 @@ function SignUp() {
         <button
           disabled={loading}
           type="submit"
-          class="text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800"
+          class="text-white bg-amber-500 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800"
         >
           Sign Up
         </button>
       </form>
 
-      <div>
-        <span className="float-right">Already have an account? Sign In</span>
+      <div className="mb-4">
+        <span className="float-right"><u><Link to="/signin">Already have an account? Sign In</Link></u></span>
       </div>
+      
+
+    </div>
     </div>
   );
 }
