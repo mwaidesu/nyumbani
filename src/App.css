@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+ }
+
 .hero {
     background-image: url('./components/Assets/Nyumbani.jpg');
-    height: 100vh;
 }
