@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-import "./App.css";
-import Home from "./components/home/Home";
-=======
+
 import { useState } from "react";
 import "./App.css";
 import Signup from "./components/auth/Signup";
 import Signin from "./components/auth/Signin";
 import { AuthContext } from "./context/AuthContext";
 // import { QuoteContext } from "./context/QuoteContext";
->>>>>>> development
 
 function App() {
   // const [quote, setQuote] = useState({
@@ -102,11 +98,6 @@ function App() {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <Home />
-    </div>
-=======
     <>
       <AuthContext.Provider value={authData}>
         {/* <QuoteContext.Provider value={quoteData}> */}
@@ -127,7 +118,6 @@ function App() {
         {/* </QuoteContext.Provider> */}
       </AuthContext.Provider>
     </>
->>>>>>> development
   );
 }
 
