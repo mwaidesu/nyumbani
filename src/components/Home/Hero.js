@@ -9,9 +9,17 @@ const Hero = () => {
               
               <h2 className='pl-7 text-white text-3xl'>The Best Logistic Service Provider</h2>
               <br/>
-              <p className='text-white text-xl'>A flexible and dedicated Mover's Company dedicated to making your life easier when moving </p>
+              <p className='pl-3 text-white text-xl'>A flexible and dedicated Mover's Company dedicated to making your life easier when moving </p>
+              <br/>
+
+              <div className='pl-5 flex justify-evenly'>
+                <button type='submit' className='bg-yellow-500 rounded p-3 hover:bg-white'>Sign Up</button>
+                <button type='submit' className='bg-yellow-500 rounded p-3 gap-4 hover:text-red-700'>Log In</button>
+              </div>
             </div>
         </div>
+
+        
         
     </div>
   )
