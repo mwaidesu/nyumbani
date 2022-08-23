@@ -5,6 +5,7 @@ import Signup from "./components/auth/Signup";
 import Signin from "./components/auth/Signin";
 import { AuthContext } from "./context/AuthContext";
 
+
 function App() {
   // const [quote, setQuote] = useState({
   //   origin: "",
