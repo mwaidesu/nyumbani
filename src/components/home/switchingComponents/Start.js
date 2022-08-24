@@ -3,7 +3,7 @@ import {FaHome} from 'react-icons/fa'
 
 const Start = () => {
   return (
-    <div className="flex justify-center ">
+    <div className="">
       {/* <h2>Get a quote?</h2> */}
 
       {/* <h4>Click below</h4> */}

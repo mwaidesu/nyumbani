@@ -3,7 +3,7 @@ import Footer from "../footer/Footer";
 import { Navbar } from "../navbar/Navbar";
 import Cards from "./Cards";
 // import Landin from "./Landin";
-import Switch from "./switchingComponents/Switch";
+import Switch from "./changingComponents/Switch";
 
 const Home = () => {
   return (

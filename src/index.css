@@ -16,12 +16,14 @@
   transform: translate(-50%, -50%);
 }
 
-.switchingComponent {
+.Switch{
+  background-color: #2C3333;
   margin: auto;
   padding: 10px;
   height: 60vh;
   padding: 2rem;
   margin-bottom: 1rem;
+  color: white;
 }
 
 .progressbar {
@@ -36,11 +38,6 @@
   height: 100%;
   background-color: #ffbf00;
 }
-
-/* .switch-body{
-  margin: 0 auto;
-} */
-
 
 
 .signin, .signup{
@@ -59,12 +56,6 @@
     /* width: 90%; */
   }
 }
-
-/* @media (max-width: 530px){
-  .cards {
-    margin: 0 auto;
-  }
-} */
 
 @media (orientation: portrait) {
   .sign-in, .sign-up {

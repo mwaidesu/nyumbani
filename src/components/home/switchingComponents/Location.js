@@ -14,9 +14,9 @@ const Location = ({ formData, setFormData }) => {
         <input
           type="text"
           id="origin"
-          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light peer border border-slate-400"
+          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light peer"
           placeholder="Enter first location"
-          required=""
+          required
           value={formData.origin}
           onChange={(e) => setFormData({ ...formData, origin: e.target.value })}
         />
@@ -25,6 +25,7 @@ const Location = ({ formData, setFormData }) => {
           Please enter origin
         </p>
       </div>
+
       <div className="mb-6">
         <label
           for="destination"
@@ -35,14 +36,17 @@ const Location = ({ formData, setFormData }) => {
         <input
           type="destination"
           id="destination"
-          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light peer"
           placeholder="Enter second location"
-          required=""
+          required
           value={formData.destination}
           onChange={(e) =>
             setFormData({ ...formData, destination: e.target.value })
           }
         />
+        <p class="invisible peer-invalid:visible text-red-700 font-light">
+          Please enter destination
+        </p>
       </div>
 
       <label
@@ -53,8 +57,9 @@ const Location = ({ formData, setFormData }) => {
       </label>
       <select
         id="companies"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 peer"
         value={formData.company}
+        required
         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
       >
         <option selected>Choose a moving company</option>

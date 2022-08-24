@@ -21,12 +21,18 @@ const HouseSize = ({formData, setFormData}) => {
 
   <div className ="mb-6">
     <label for="date" className ="block mb-2 text-sm font-medium text-white dark:text-gray-300">Moving Date</label>
-    <input type="date" id="date" className ="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter first location" required="" value={formData.date} onChange={(e) => setFormData({...formData, date: e.target.value})}/>
+    <input type="date" id="date" className ="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light peer" placeholder="Enter first location" required value={formData.date} onChange={(e) => setFormData({...formData, date: e.target.value})}/>
+    <p class="invisible peer-invalid:visible text-red-700 font-light">
+          Please enter date
+        </p>
   </div>
   <div className ="mb-6">
     <label for="time" className ="block mb-2 text-sm font-medium text-white dark:text-gray-300">Perfect Moving Time</label>
-    <input type="time" id="time" className ="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" 
-    placeholder="Enter second location" required="" value={formData.time} onChange={(e) => setFormData({...formData, time: e.target.value})}/>
+    <input type="time" id="time" className ="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light peer" 
+    placeholder="Enter second location" required value={formData.time} onChange={(e) => setFormData({...formData, time: e.target.value})}/>
+    <p class="invisible peer-invalid:visible text-red-700 font-light">
+          Please enter time
+        </p>
   </div>
 
 
