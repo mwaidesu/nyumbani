@@ -2,7 +2,7 @@ import Hero from './components/Home/Hero'
 import './App.css';
 import Testimonials from './components/Cards/Testimonials';
 import Company from './components/Company';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
