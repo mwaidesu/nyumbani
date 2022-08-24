@@ -15,6 +15,7 @@ const Start = ({ nextStep }) => {
           <FaHome />
         </div>
 
+        <div>
         <button
           className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded mx-auto"
           type="submit"
@@ -22,6 +23,7 @@ const Start = ({ nextStep }) => {
         >
           Continue
         </button>
+        </div>
       </div>
     </div>
   );

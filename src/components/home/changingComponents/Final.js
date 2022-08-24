@@ -7,7 +7,7 @@ const Final = ({ values , prevStep}) => {
   const {  origin,
   destination,
   company,
-  // kilometres: "",
+  // distance,
   house,
   date,
   time, } = values;
@@ -58,13 +58,13 @@ const Final = ({ values , prevStep}) => {
 
       <div style={{ display: "flex", justifyContent: "space-around" }}>
             <button className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded" onClick={prevStep}>
-              Previous
+              Try Again
             </button>
 
             
 
             <button className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded" type="submit" onClick={handleSubmit}>
-              Submit
+              Accept Quote
             </button>
         </div>
     </>

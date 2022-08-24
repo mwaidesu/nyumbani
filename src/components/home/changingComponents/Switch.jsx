@@ -1,7 +1,7 @@
 // import "./Switch.css";
 // import { div, div, div } from "react-bootstrap";
 import { useState } from "react";
-// import StepOne from "./StepOne";
+import Location from "./Location";
 import StepTwo from "./StepTwo";
 import Final from "./Final";
 import Start from "./Start";
@@ -20,7 +20,7 @@ function Switch() {
     house: "",
     date: "",
     time: "",
-    quote: ""
+    quote: "",
   });
 
   // function for going to next step by increasing step state by 1
@@ -58,25 +58,39 @@ function Switch() {
             ></div>
           </div>
 
-          <Start nextStep={nextStep}/>
+          <Start nextStep={nextStep} />
         </div>
       );
-    // case 2:
-    //   return (
-    //     <div className="Switch text-black">
-    //       <div>
-    //         <div>
-    //           <div
-    //           // md={{ span: 6, offset: 3 }}
-    //           className="custom-margin text-black">
-    //             <StepOne nextStep={nextStep} prevStep={prevStep} handleFormData={handleInputData} values={formData} />
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   );
-    // case 2 to show stepTwo form passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
+
     case 2:
+      return (
+        <div className="Switch text-black">
+          <div>
+            <div>
+              <div
+                // md={{ span: 6, offset: 3 }}
+                className="custom-margin text-black"
+              >
+                <div className="progressbar">
+            <div
+              style={{
+                width: "50%",
+              }}
+            ></div>
+          </div>
+                <Location
+                  nextStep={nextStep}
+                  prevStep={prevStep}
+                  handleFormData={handleInputData}
+                  values={formData}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    // case 2 to show stepTwo form passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
+    case 3:
       return (
         <div className="Switch ">
           <div>
@@ -102,13 +116,13 @@ function Switch() {
         </div>
       );
     // Only formData is passed as prop to show the final value at form submit
-    case 3:
+    case 4:
       return (
         <div className="Switch">
           <div>
             <div>
               <div md={{ span: 6, offset: 3 }} className="custom-margin">
-              <div className="progressbar">
+                <div className="progressbar">
                   <div
                     style={{
                       width: "100%",
