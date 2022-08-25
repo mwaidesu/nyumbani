@@ -6,12 +6,26 @@ const Landin = () => {
   return (
     <div className="mx-auto mt-12">
       <Link to="/signin">
-      Sign In
+      <u>Click to go to Sign In Page</u>
       </Link>
+
+      <br></br>
+      <br/>
 
       <Link to ="/signup" >
       
-      Sign Up
+      <u>Click To go to Sign Up Page</u>
+
+      </Link>
+
+
+      <br></br>
+      <br/>
+
+
+      <Link to ="/home" >
+      
+      <u>Click To go to Home Page</u>
 
       </Link>
     </div>

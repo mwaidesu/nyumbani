@@ -24,7 +24,7 @@ export const Navbar = () => {
       
     </div>
 
-          <button className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg" onClick={logout}>Log Out</button>
+          <button className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg" onClick={logout}>Log Out/Not Working</button>
     
   </div>
 </nav>
