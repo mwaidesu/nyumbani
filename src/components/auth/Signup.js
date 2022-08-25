@@ -49,8 +49,7 @@ function SignUp() {
   }
 
   return (
-    <div className="bg-amber-100 signup flex">
-    <div className="w-2/5 items-center mx-auto border rounded-lg p-7 shadow-2xl my-auto sign-up bg-white ">
+
       {error && (
         <div
           style={{
@@ -63,7 +62,7 @@ function SignUp() {
         </div>
       )}
       <form onSubmit={handleSubmit}>
-        <h2 className="text-4xl my-5">Sign Up</h2>
+        <h2 className="text-4xl my-5 ">Sign Up</h2>
         <div class="mb-6">
           <label
             for="name"

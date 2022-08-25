@@ -40,8 +40,6 @@ function SignIn() {
   }
 
   return (
-    <div className="bg-amber-100 signin flex">
-    <div className="w-2/5 items-center mx-auto bg-white border rounded-lg p-7 my-auto shadow-2xl sign-in">
       {error && (
         <div
           style={{
