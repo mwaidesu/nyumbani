@@ -22,7 +22,7 @@ import { useRef, useState } from "react";
 
 const center = { lat: 1.9577, lng: 37.2972 };
 
-function Location({ nextStep,handleFormData, prevStep }) {
+function Location({ nextStep, prevStep, formData, setFormData }) {
   const handleClickNext = () => {
     nextStep();
   };
@@ -96,6 +96,11 @@ function Location({ nextStep,handleFormData, prevStep }) {
                   color="black"
                   placeholder="Input Origin eg. Nairobi"
                   ref={originRef}
+                  required=""
+                  value={formData.origin}
+                  onChange={(e) =>
+                    setFormData({ ...formData, origin: e.target.value })
+                  }
                 />
               </Autocomplete>
             </label>
@@ -181,7 +186,7 @@ function Location({ nextStep,handleFormData, prevStep }) {
               Duration: {duration}{" "}
             </label>
 
-            <IconButton
+            {/* <IconButton
               aria-label="center back"
               icon={<FaLocationArrow />}
               isRound
@@ -189,7 +194,7 @@ function Location({ nextStep,handleFormData, prevStep }) {
                 map.panTo(center);
                 map.setZoom(15);
               }}
-            />
+            /> */}
           </div>
         </div>
         <div

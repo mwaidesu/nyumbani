@@ -21,7 +21,7 @@ const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
   return (
     <>
 
-      <div className="w-3/5 mx-auto">
+      <div className="w-5/5 mx-auto">
         <form onSubmit={submitFormData}>
           <div>
           <label

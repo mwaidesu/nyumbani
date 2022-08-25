@@ -22,7 +22,7 @@ import { useRef, useState } from "react";
 
 const center = { lat: 1.9577, lng: 37.2972 };
 
-function Location({ nextStep,handleFormData, prevStep }) {
+function Location({ nextStep,handleFormData prevStep }) {
   const handleClickNext = () => {
     nextStep();
   };

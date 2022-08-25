@@ -22,7 +22,7 @@ import { useRef, useState } from "react";
 
 const center = { lat: 1.9577, lng: 37.2972 };
 
-function Location({ nextStep,handleFormData, prevStep }) {
+function Location({ nextStep, prevStep }) {
   const handleClickNext = () => {
     nextStep();
   };
@@ -83,12 +83,12 @@ function Location({ nextStep,handleFormData, prevStep }) {
     <div className="w-5/5 mx-auto">
       <form onSubmit={calculateRoute}>
         <div className="flex w-4/5 columns-2 ...">
-          <div className="flex mx-auto">
+          <div className="flex grid row mx-auto">
             <label
               for="origin"
               class="block mb-2 text-sm font-auto text-white dark:text-gray-400"
             >
-              Current Location
+              input your origin
               <Autocomplete>
                 <Input
                   className="py-2 px-8 rounded mx-auto map-form"
@@ -100,12 +100,12 @@ function Location({ nextStep,handleFormData, prevStep }) {
               </Autocomplete>
             </label>
           </div>
-          <div className="flex  mx-auto ">
+          <div className="flex grid row mx-auto ">
             <label
               for="destination"
               class="block mb-2 text-auto font-auto text-white dark:text-gray-400"
             >
-              Desired Destination
+              input your destination
               <Autocomplete>
                 <Input
                   className="py-2 px-8 rounded mx-auto map-form"
@@ -172,16 +172,12 @@ function Location({ nextStep,handleFormData, prevStep }) {
           </Box>
         </Flex>
         <div class="flex grid-row-1 gap-4">
-          <div className="flex w-4/5 columns-2 ...">
-            <label className="py-2 px-8 rounded mx-auto ">
-              Distance: {distance}{" "}
-            </label>
+          <div class="flex grid row ">
+            <label className="py-2 px-8 rounded mx-auto map-form">Distance: {distance} </label>
             {/* console.log({distance}) */}
-            <label className="py-2 px-8 rounded mx-auto ">
-              Duration: {duration}{" "}
-            </label>
+            <labelclassName="py-2 px-8 rounded mx-auto map-form">Duration: {duration} </label>
 
-            <IconButton
+            {/* <IconButton
               aria-label="center back"
               icon={<FaLocationArrow />}
               isRound
@@ -189,27 +185,28 @@ function Location({ nextStep,handleFormData, prevStep }) {
                 map.panTo(center);
                 map.setZoom(15);
               }}
-            />
-          </div>
-        </div>
-        <div
-          style={{ display: "flex", justifyContent: "space-around" }}
-          className="mt-4"
-        >
-          <button
-            className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
-            onClick={handleClickPrev}
-          >
-            Previous
-          </button>
+            /> */}
 
-          <button
-            className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
-            type="submit"
-            onClick={handleClickNext}
-          >
-            Next
-          </button>
+            <div
+              style={{ display: "flex", justifyContent: "space-around" }}
+              className="mt-4"
+            >
+              <button
+                className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+                onClick={handleClickPrev}
+              >
+                Previous
+              </button>
+
+              <button
+                className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+                type="submit"
+                onClick={handleClickNext}
+              >
+                Next
+              </button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

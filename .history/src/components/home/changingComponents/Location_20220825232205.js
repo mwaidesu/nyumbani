@@ -22,7 +22,7 @@ import { useRef, useState } from "react";
 
 const center = { lat: 1.9577, lng: 37.2972 };
 
-function Location({ nextStep,handleFormData, prevStep }) {
+function Location({ nextStep, prevStep }) {
   const handleClickNext = () => {
     nextStep();
   };
@@ -52,8 +52,7 @@ function Location({ nextStep,handleFormData, prevStep }) {
     return <SkeletonText />;
   }
 
-  async function calculateRoute(e) {
-    e.preventDefault();
+  async function calculateRoute() {
     if (originRef.current.value === "" || destiantionRef.current.value === "") {
       return;
     }
@@ -83,12 +82,12 @@ function Location({ nextStep,handleFormData, prevStep }) {
     <div className="w-5/5 mx-auto">
       <form onSubmit={calculateRoute}>
         <div className="flex w-4/5 columns-2 ...">
-          <div className="flex mx-auto">
+          <div className="flex grid row mx-auto">
             <label
               for="origin"
               class="block mb-2 text-sm font-auto text-white dark:text-gray-400"
             >
-              Current Location
+              input your origin
               <Autocomplete>
                 <Input
                   className="py-2 px-8 rounded mx-auto map-form"
@@ -100,12 +99,12 @@ function Location({ nextStep,handleFormData, prevStep }) {
               </Autocomplete>
             </label>
           </div>
-          <div className="flex  mx-auto ">
+          <div className="flex grid row mx-auto ">
             <label
               for="destination"
               class="block mb-2 text-auto font-auto text-white dark:text-gray-400"
             >
-              Desired Destination
+              input your destination
               <Autocomplete>
                 <Input
                   className="py-2 px-8 rounded mx-auto map-form"
@@ -117,69 +116,31 @@ function Location({ nextStep,handleFormData, prevStep }) {
               </Autocomplete>
             </label>
           </div>
-          <ButtonGroup>
-            <Button
-              className="py-2 px-2 rounded mx-2"
-              bg="#f3d34e"
-              colorScheme="#faf3c7"
-              textColor="black"
-              type="submit"
-              onClick={calculateRoute}
-              // borderRadius={0}
-            >
-              See Route
-            </Button>
-            {/* <IconButton
+        </div>
+        <div class="flex grid-row-1 gap-4">
+          <div class="flex grid row ">
+            <ButtonGroup>
+              <Button
+                className="py-2 px-2 rounded mx-2"
+                bg="#f3d34e"
+                colorScheme="#faf3c7"
+                textColor="black"
+                type="submit"
+                onClick={calculateRoute}
+                // borderRadius={0}
+              >
+                See Route
+              </Button>
+              {/* <IconButton
                   aria-label="center back"
                   icon={<FaTimes />}
                   onClick={clearRoute}
                 /> */}
-          </ButtonGroup>
-        </div>
-        <Flex
-          position="relative"
-          flexDirection="column"
-          alignItems="center"
-          h="35vh"
-          w="80vw"
-        >
-          <Box
-            position="flex"
-            left={0}
-            top={0}
-            h="130%"
-            w="130%"
-            className="mx-auto"
-          >
-            {/* Google Map Box */}
-            <GoogleMap
-              center={center}
-              zoom={6}
-              mapContainerStyle={{ width: "60%", height: "100%" }}
-              options={{
-                zoomControl: false,
-                streetViewControl: false,
-                mapTypeControl: false,
-                fullscreenControl: false,
-              }}
-              onLoad={(map) => setMap(map)}
-            >
-              <Marker position={center} />
-              {directionsResponse && (
-                <DirectionsRenderer directions={directionsResponse} />
-              )}
-            </GoogleMap>
-          </Box>
-        </Flex>
-        <div class="flex grid-row-1 gap-4">
-          <div className="flex w-4/5 columns-2 ...">
-            <label className="py-2 px-8 rounded mx-auto ">
-              Distance: {distance}{" "}
-            </label>
+            </ButtonGroup>
+
+            <Text>Distance: {distance} </Text>
             {/* console.log({distance}) */}
-            <label className="py-2 px-8 rounded mx-auto ">
-              Duration: {duration}{" "}
-            </label>
+            <Text>Duration: {duration} </Text>
 
             <IconButton
               aria-label="center back"
@@ -190,26 +151,62 @@ function Location({ nextStep,handleFormData, prevStep }) {
                 map.setZoom(15);
               }}
             />
-          </div>
-        </div>
-        <div
-          style={{ display: "flex", justifyContent: "space-around" }}
-          className="mt-4"
-        >
-          <button
-            className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
-            onClick={handleClickPrev}
-          >
-            Previous
-          </button>
+            <Flex
+              position="relative"
+              flexDirection="column"
+              alignItems="center"
+              h="35vh"
+              w="80vw"
+            >
+              <Box
+                position="flex"
+                left={0}
+                top={0}
+                h="130%"
+                w="130%"
+                className="mx-auto"
+              >
+                {/* Google Map Box */}
+                <GoogleMap
+                  center={center}
+                  zoom={6}
+                  mapContainerStyle={{ width: "60%", height: "100%" }}
+                  options={{
+                    zoomControl: false,
+                    streetViewControl: false,
+                    mapTypeControl: false,
+                    fullscreenControl: false,
+                  }}
+                  onLoad={(map) => setMap(map)}
+                >
+                  <Marker position={center} />
+                  {directionsResponse && (
+                    <DirectionsRenderer directions={directionsResponse} />
+                  )}
+                </GoogleMap>
+              </Box>
+            </Flex>
 
-          <button
-            className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
-            type="submit"
-            onClick={handleClickNext}
-          >
-            Next
-          </button>
+            <div
+              style={{ display: "flex", justifyContent: "space-around" }}
+              className="mt-4"
+            >
+              <button
+                className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+                onClick={handleClickPrev}
+              >
+                Previous
+              </button>
+
+              <button
+                className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+                type="submit"
+                onClick={handleClickNext}
+              >
+                Next
+              </button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

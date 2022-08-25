@@ -22,7 +22,7 @@ import { useRef, useState } from "react";
 
 const center = { lat: 1.9577, lng: 37.2972 };
 
-function Location({ nextStep,handleFormData, prevStep }) {
+function Location({ nextStep, prevStep }) {
   const handleClickNext = () => {
     nextStep();
   };
@@ -88,7 +88,7 @@ function Location({ nextStep,handleFormData, prevStep }) {
               for="origin"
               class="block mb-2 text-sm font-auto text-white dark:text-gray-400"
             >
-              Current Location
+              
               <Autocomplete>
                 <Input
                   className="py-2 px-8 rounded mx-auto map-form"
@@ -105,7 +105,7 @@ function Location({ nextStep,handleFormData, prevStep }) {
               for="destination"
               class="block mb-2 text-auto font-auto text-white dark:text-gray-400"
             >
-              Desired Destination
+              input your destination
               <Autocomplete>
                 <Input
                   className="py-2 px-8 rounded mx-auto map-form"
@@ -181,7 +181,7 @@ function Location({ nextStep,handleFormData, prevStep }) {
               Duration: {duration}{" "}
             </label>
 
-            <IconButton
+            {/* <IconButton
               aria-label="center back"
               icon={<FaLocationArrow />}
               isRound
@@ -189,7 +189,7 @@ function Location({ nextStep,handleFormData, prevStep }) {
                 map.panTo(center);
                 map.setZoom(15);
               }}
-            />
+            /> */}
           </div>
         </div>
         <div
