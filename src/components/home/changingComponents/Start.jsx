@@ -9,13 +9,14 @@ const Start = ({ nextStep }) => {
   };
 
   return (
-    <div className="w-3/5 mx-auto">
+    <div className="mx-auto w-1/5 center py-10">
+      
+      <div className="text-4xl">Get Started</div>
       <div className="">
-        <div className="text-9xl">
+        <div className="text-9xl py-5">
           <FaHome />
         </div>
 
-        <div>
         <button
           className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded mx-auto"
           type="submit"
@@ -23,7 +24,7 @@ const Start = ({ nextStep }) => {
         >
           Continue
         </button>
-        </div>
+
       </div>
     </div>
   );

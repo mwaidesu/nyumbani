@@ -35,7 +35,7 @@ function SignUp() {
       if (res.id) {
         console.log("success");
         console.log(res);
-        history.push("/");
+        history.push("/home");
       } else if (res.errors) {
         console.log(`errors: ${res.errors}`);
         setError(res.errors);

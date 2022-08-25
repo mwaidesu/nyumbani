@@ -26,7 +26,7 @@ function SignIn() {
 
       if (res.id) {
         console.log("success");
-        history.push("/");
+        history.push("/home");
       } else if (res.errors) {
         console.log(`errors: ${res.errors}`);
         setError(res.errors);
