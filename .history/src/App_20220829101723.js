@@ -114,7 +114,7 @@ function App() {
               <Route exact path="/">
                 <Landin />
               </Route>
-              <Route path="/signup/">
+              <Route path="/signup">
                 <Signup />
               </Route>
               <Route path="/signin">
