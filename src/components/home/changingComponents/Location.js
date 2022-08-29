@@ -24,7 +24,6 @@ import { useRef, useState } from "react";
 const center = { lat: 1.9577, lng: 37.2972 };
 
 function Location({ nextStep, prevStep }) {
-
   const handleClickNext = () => {
     nextStep();
   };
@@ -82,27 +81,29 @@ function Location({ nextStep, prevStep }) {
 
   return (
     <div className="mx-auto">
-      <div class="flex grid-cols-1 gap-4">
-        <div class="row ">
+      <div className="flex grid-cols-1 gap-4">
+        <div className="row ">
           <Box
             p={4}
-            borderRadius="lg"
+            // borderRadius="lg"
             m={4}
             // bgColor="black"
             textColor="white"
-            shadow="base"
+            // shadow="base"
             minW="container.md"
             width="50vw"
             zIndex="1"
             display="flex flex-wrap"
           >
-            <HStack spacing={2} justifyContent="space-between" >
-              <Box 
+            <HStack spacing={2} 
+            justifyContent="space-between"
+            >
+              <Box
               // flexGrow={1}
               >
                 <Autocomplete>
                   <Input
-                  className="py-2 px-2 rounded mx-2 map-form"
+                    className="py-2 px-2 rounded mx-2 map-form"
                     type="text"
                     color="black"
                     placeholder="Input Origin eg. Nairobi"
@@ -110,12 +111,12 @@ function Location({ nextStep, prevStep }) {
                   />
                 </Autocomplete>
               </Box>
-              <Box 
+              <Box
               // flexGrow={1}
               >
                 <Autocomplete>
                   <Input
-                  className="py-2 px-2 rounded mx-2 map-form"
+                    className="py-2 px-2 rounded mx-2 map-form"
                     type="text"
                     color="black"
                     placeholder="Input Destination eg. Kitale"
@@ -126,7 +127,7 @@ function Location({ nextStep, prevStep }) {
 
               <ButtonGroup>
                 <Button
-                className="py-2 px-2 rounded mx-2"
+                  className="py-2 px-2 rounded mx-2"
                   bg="#f3d34e"
                   colorScheme="#faf3c7"
                   textColor="black"
@@ -150,7 +151,7 @@ function Location({ nextStep, prevStep }) {
               <Text>Distance: {distance} </Text>
               {/* console.log({distance}) */}
               <Text>Duration: {duration} </Text>
-          
+
               {/* <div>
               
               </div> */}
@@ -172,10 +173,17 @@ function Location({ nextStep, prevStep }) {
             h="35vh"
             w="80vw"
           >
-            <Box position="flex" left={0} top={0} h="130%" w="130%" className="mx-auto">
+            <Box
+              position="flex"
+              left={0}
+              top={0}
+              h="130%"
+              w="130%"
+              className="mx-auto "
+            >
               {/* Google Map Box */}
               <GoogleMap
-              
+              // className="z-0"
                 center={center}
                 zoom={6}
                 mapContainerStyle={{ width: "60%", height: "100%" }}
@@ -200,13 +208,17 @@ function Location({ nextStep, prevStep }) {
         style={{ display: "flex", justifyContent: "space-around" }}
         className="mt-4"
       >
-        <button className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded" onClick={handleClickPrev}>
+        <button
+          className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+          onClick={handleClickPrev}
+        >
           Previous
         </button>
 
         <button
           className="bg-transparent hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
-          type="submit" onClick={handleClickNext}
+          type="submit"
+          onClick={handleClickNext}
         >
           Next
         </button>

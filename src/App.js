@@ -88,7 +88,7 @@ function App() {
   return (
     <>
       <AuthContext.Provider value={authData}>
-        <div className="App">
+        <div className="App w-full">
           <main>
             {/* {user ? (
               <Switch>

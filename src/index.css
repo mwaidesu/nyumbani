@@ -7,7 +7,9 @@
 * {
   font-family: "Poppins", sans-serif;
 }
-
+.sticky{
+  z-index: 9999;
+}
 .centered {
   position: absolute;
   top: 80%;
@@ -60,7 +62,7 @@
 @media (orientation: portrait) {
   .sign-in,
   .sign-up {
-    width: 50%;
+    width: 90%;
   }
 }
 
