@@ -4,6 +4,7 @@ import "./App.css";
 import Signup from "./components/auth/Signup";
 import Signin from "./components/auth/Signin";
 import { AuthContext } from "./context/AuthContext";
+import Admin from "./components/admin/Admin";
 
 
 function App() {
@@ -109,6 +110,7 @@ function App() {
               
               {/* <Signin /> */}
               <Signup/>
+              {/* <Admin/> */}
             
             
             {/* get a quote ends here */}
