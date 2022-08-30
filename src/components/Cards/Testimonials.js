@@ -3,7 +3,9 @@ import React from "react";
 const Testimonials = () => {
   return (
 
-    <div className="grid grid-cols-10 md:grid-cols-12 my-2">
+    <div className='text-black  text-3xl '>
+        <h1>Testimonials</h1>
+         <div className="grid grid-cols-10 md:grid-cols-12 my-2">
       <div className='hidden md:contents'><div></div></div>
       <div className="col-span-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mx-1">
@@ -90,6 +92,9 @@ const Testimonials = () => {
       </div>
       <div className='hidden md:contents'><div></div></div>
     </div>
+    </div>
+
+   
 
       
   );

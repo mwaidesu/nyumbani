@@ -2,8 +2,9 @@ import React from 'react'
 
 const Company = () => {
   return (
-    
-    <div className="grid grid-cols-10 md:grid-cols-12 my-2 bg-black">
+    <div className='text-3xl bg-black text-white'>
+      <h1>Companies</h1>
+      <div className="grid grid-cols-10 md:grid-cols-12 my-2">
       <div className='hidden md:contents'><div></div></div>
       <div className="col-span-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mx-1">
@@ -90,6 +91,8 @@ const Company = () => {
       </div>
       <div className='hidden md:contents'><div></div></div>
     </div>
+      </div>
+    
 
   )
 }
