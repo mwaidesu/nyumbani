@@ -4,7 +4,7 @@ const Testimonials = () => {
   return (
 
     <div className='text-black  text-3xl '>
-        <h1>Testimonials</h1>
+        <h1 className="text-center">Testimonials</h1>
          <div className="grid grid-cols-10 md:grid-cols-12 my-2">
       <div className='hidden md:contents'><div></div></div>
       <div className="col-span-10">

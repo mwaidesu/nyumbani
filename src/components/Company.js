@@ -3,7 +3,7 @@ import React from 'react'
 const Company = () => {
   return (
     <div className='text-3xl bg-black text-white'>
-      <h1>Companies</h1>
+      <h1 className='text-center'>Companies</h1>
       <div className="grid grid-cols-10 md:grid-cols-12 my-2">
       <div className='hidden md:contents'><div></div></div>
       <div className="col-span-10">
