@@ -2,50 +2,95 @@ import React from 'react'
 
 const Company = () => {
   return (
-  <div className='bg-black h-80'>
-    <div className='p-4 '>
-      <div className="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <img className="object-cover w-1/2 h-rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="https://images-platform.99static.com//79A-7giC5Xkp8n73G1K02vl9a-Q=/57x63:946x952/fit-in/500x500/99designs-contests-attachments/116/116039/attachment_116039585" alt="" />
-      <div className="flex flex-col justify-between p-4 leading-normal">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Movers & Shakers</h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos, incidunt consectetur aspernatur, aliquid.</p>
+
+    <div className="grid grid-cols-10 md:grid-cols-12 my-2">
+      <div className='hidden md:contents'><div></div></div>
+      <div className="col-span-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mx-1">
+          <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div>
+              <img
+                className="rounded-t-lg"
+                src="https://us.123rf.com/450wm/karelnoppe/karelnoppe1601/karelnoppe160100010/51235375-close-up-outdoor-portrait-of-attractive-african-teen-girl-with-braided-hairstyle-.jpg?ver=6"
+                alt=""
+              />
+            </div>
+            <div className="p-1">
+              <div>
+                <h5 className="text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                  Amani Cherera
+                </h5>
+              </div>
+              <p className="text-xs text-gray-700 dark:text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos, incidunt consectetur aspernatur, aliquid.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div>
+              <img
+                className="rounded-t-lg"
+                src="https://us.123rf.com/450wm/karelnoppe/karelnoppe1601/karelnoppe160100010/51235375-close-up-outdoor-portrait-of-attractive-african-teen-girl-with-braided-hairstyle-.jpg?ver=6"
+                alt=""
+              />
+            </div>
+            <div className="p-1">
+              <div>
+                <h5 className="text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                  Amani Cherera
+                </h5>
+              </div>
+              <p className="text-xs text-gray-700 dark:text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos, incidunt consectetur aspernatur, aliquid.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div>
+              <img
+                className="rounded-t-lg"
+                src="https://us.123rf.com/450wm/karelnoppe/karelnoppe1601/karelnoppe160100010/51235375-close-up-outdoor-portrait-of-attractive-african-teen-girl-with-braided-hairstyle-.jpg?ver=6"
+                alt=""
+              />
+            </div>
+            <div className="p-1">
+              <div>
+                <h5 className="text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                  Amani Cherera
+                </h5>
+              </div>
+              <p className="text-xs text-gray-700 dark:text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos, incidunt consectetur aspernatur, aliquid.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div>
+              <img
+                className="rounded-t-lg"
+                src="https://us.123rf.com/450wm/karelnoppe/karelnoppe1601/karelnoppe160100010/51235375-close-up-outdoor-portrait-of-attractive-african-teen-girl-with-braided-hairstyle-.jpg?ver=6"
+                alt=""
+              />
+            </div>
+            <div className="p-1">
+              <div>
+                <h5 className="text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                  Amani Cherera
+                </h5>
+              </div>
+              <p className="text-xs text-gray-700 dark:text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos, incidunt consectetur aspernatur, aliquid.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      </div>
+      <div className='hidden md:contents'><div></div></div>
     </div>
 
-    <div className='p-4'>
-      <div className="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <img className="object-cover w-1/2 h-rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="https://images-platform.99static.com//79A-7giC5Xkp8n73G1K02vl9a-Q=/57x63:946x952/fit-in/500x500/99designs-contests-attachments/116/116039/attachment_116039585" alt="" />
-      <div className="flex flex-col justify-between p-4 leading-normal">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Movers & Shakers</h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos, incidunt consectetur aspernatur, aliquid.</p>
-      </div>
-      
-      </div>
-    </div>
-
-    <div className='p-4'>
-      <div className="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <img className="object-cover w-1/2 h-rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="https://images-platform.99static.com//79A-7giC5Xkp8n73G1K02vl9a-Q=/57x63:946x952/fit-in/500x500/99designs-contests-attachments/116/116039/attachment_116039585" alt="" />
-      <div className="flex flex-col justify-between p-4 leading-normal">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Utahama Lini</h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos, incidunt consectetur aspernatur, aliquid.</p>
-      </div>
-      
-      </div>
-    </div>
-    <div className='p-4'>
-      <div className="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <img className="object-cover w-1/2 h-rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="https://images-platform.99static.com//79A-7giC5Xkp8n73G1K02vl9a-Q=/57x63:946x952/fit-in/500x500/99designs-contests-attachments/116/116039/attachment_116039585" alt="" />
-      <div className="flex flex-col justify-between p-4 leading-normal">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ofisini Movers</h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos, incidunt consectetur aspernatur, aliquid.</p>
-      </div>
-      
-      </div>
-    </div>
-  </div>
   )
 }
 
