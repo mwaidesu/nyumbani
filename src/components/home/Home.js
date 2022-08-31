@@ -13,6 +13,8 @@ const Home = () => {
     <div className="bg-amber-100">
       <Navbar />
 
+      {/* <Landin/> */}
+
       <div className="w-11/12 mx-auto">
         <div className=" pb-4">
           <img

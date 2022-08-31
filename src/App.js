@@ -6,6 +6,7 @@ import { AuthContext } from "./context/AuthContext";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/home/Home";
 import PrivateRoute from "./components/PrivateRoute";
+import Landin from "./components/home/Landin";
 // import AdminRoute from "./components/AdminRoute";
 // import Admin from "./components"
 
@@ -91,7 +92,8 @@ function App() {
           <main>
             <Router>
               <Switch>
-                <PrivateRoute exact path="/" component={Home} />
+                <PrivateRoute path="/home" component={Home} />
+                <Route exact path="/" component={Landin} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/signin" component={Signin} />
                 {/* <AdminRoute path="/admin" component={Admin} /> */}

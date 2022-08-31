@@ -39,7 +39,7 @@ function SignUp() {
         };
         setAuth(newState);
         localStorage.setItem("auth", newState);
-        history.push("/");
+        history.push("/home");
       } else if (res.errors) {
         setError(res.errors);
       }
