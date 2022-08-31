@@ -1,28 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Signup from "./components/auth/Signup";
 import Signin from "./components/auth/Signin";
 import { AuthContext } from "./context/AuthContext";
-import { Route, Switch } from "react-router-dom";
-import Landin from "./components/home/Landin";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/home/Home";
-// import Either from "./components/either/Either";
+import PrivateRoute from "./components/PrivateRoute";
+// import AdminRoute from "./components/AdminRoute";
+// import Admin from "./components"
 
 // import FourOhFour from "./components/FourOhFour";
 
 function App() {
-  // const [user, setUser] = useState(null);
-
   const [auth, setAuth] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    name: null,
+    email: null,
+    phone: null,
+    // isAdmin: false
   });
+
+  useEffect(() => {
+    const auth = localStorage.getItem("auth");
+    if (auth) {
+      setAuth(auth);
+      
+    }
+  }, [auth]);
 
   async function signinCallback(email, password) {
     const route = "https://nyumbani-move.herokuapp.com/api/login";
-
-    console.log(route);
 
     return await fetch(route, {
       method: "POST",
@@ -34,12 +40,9 @@ function App() {
         password,
       }),
     }).then((r) => {
-      console.log("inside fetch");
       return r.json();
-      // if (r.ok) {
-      //   r.json().then((user) => setUser(user));
-      // }
-    });
+    })
+    .then(data=>console.log(data));
   }
 
   async function signupCallback(name, email, phone, password) {
@@ -64,18 +67,14 @@ function App() {
   async function signoutCallback() {
     const route = "https://nyumbani-move.herokuapp.com/api/signout";
 
-    await fetch(route, { method: "DELETE" })
-      // .then(history.push("/"));
-      .then(console.log("signed out"));
+    await fetch(route, { method: "DELETE" });
+    setAuth({
+      name: null,
+      email: null,
+      phone: null,
+    });
+    localStorage.clear();
   }
-
-  // useEffect(() => {
-  //   fetch("https://nyumbani-move.herokuapp.com/api/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
 
   const authData = {
     auth,
@@ -90,40 +89,14 @@ function App() {
       <AuthContext.Provider value={authData}>
         <div className="App w-full">
           <main>
-            {/* {user ? (
+            <Router>
               <Switch>
-                <Route path="/">
-                  <Landin user={user} setUser={setUser}/>
-                </Route>
+                <PrivateRoute exact path="/" component={Home} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/signin" component={Signin} />
+                {/* <AdminRoute path="/admin" component={Admin} /> */}
               </Switch>
-            ) : (
-              <Switch>
-                <Route path="/signup">
-                  <Signup setUser={setUser} />
-                </Route>
-                <Route path="/signin">
-                  <Signin setUser={setUser} />
-                </Route>
-                <Route path="/home">
-                  <Home />
-                </Route>
-              </Switch>
-            )} */}
-
-            <Switch>
-              <Route exact path="/">
-                <Landin />
-              </Route>
-              <Route path="/signup">
-                <Signup />
-              </Route>
-              <Route path="/signin">
-                <Signin />
-              </Route>
-              <Route path="/home">
-                <Home />
-              </Route>
-            </Switch>
+            </Router>
           </main>
         </div>
       </AuthContext.Provider>
