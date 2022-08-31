@@ -23,7 +23,7 @@ function SignIn() {
         emailRef.current.value,
         passwordRef.current.value
       );
-
+console.log(res)
       if (res.id) {
         const newState = {
           name: res.name,
