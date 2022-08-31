@@ -1,0 +1,41 @@
+.Cards {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-around;
+
+}
+.card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 1vw;
+  border-radius: 10px;
+}
+.card>div{
+  padding: 2vw;
+}
+.parentContainer{
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .Cards{
+    /* flex-direction: column; */
+  }
+  .parentContainer{
+    height: 9rem;
+  }
+
+  .card>div{
+    padding: 0.5vw;
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  .Cards{
+    width: 60%;
+  }
+}

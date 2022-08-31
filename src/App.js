@@ -11,6 +11,7 @@ import Landin from "./components/home/Landin";
 // import Admin from "./components"
 
 // import FourOhFour from "./components/FourOhFour";
+// import Admin from "./components/admin/Admin";
 
 function App() {
   const [auth, setAuth] = useState({
