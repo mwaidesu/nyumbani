@@ -1,25 +1,32 @@
 import React from "react";
-// import { Form, Button } from "react-bootstrap";
-
-
+import { Form, Button } from "bootstrap";
 
 function Quotation({formData}) {
 
-formData.total = parseInt(formData.distance.slice(0,2) * 300)
-// formData.date =Date().toDateString()
-
-// if (formData.houseSize === "2Bedroom"){
-//   total= total+2000;
-// }
-// else if(formData.houseSize === "1Bedroom"){
-//   total = total +1000;
-// }
+  console.log(formData);
+  formData.cost = parseInt(formData.distance.slice(0,2) *300)
   return (
     <div className="quote">
       {/* <h3 className="mb-4">Quotation</h3> */}
-
       <div className="row flex my-3">
-        <p className="col text-2xl">House:</p>
+        <p className="col text-2xl">Origin: </p>
+        <p className="col ml-4 text-2xl">{formData.origin}</p>
+      </div>
+      <div className="row flex mb-2">
+        <p className="col text-2xl">Destination: </p>
+        <p className="col ml-4 text-2xl">{formData.destination}</p>
+      </div>
+      <div className="row flex mb-2">
+        <p className="col text-2xl">Mover: </p>
+        <p className="col ml-4 text-2xl">{formData.mover}</p>
+      </div>
+
+      <div className="row flex mb-2">
+        <p className="col text-2xl">Distance: </p>
+        <p className="col ml-4 text-2xl">{formData.distance}</p>
+      </div>
+      <div className="row flex my-3">
+        <p className="col text-2xl">House</p>
         <p className="col ml-4 text-2xl">{formData.houseSize}</p>
       </div>
 
@@ -31,11 +38,12 @@ formData.total = parseInt(formData.distance.slice(0,2) * 300)
       <div className="row flex mb-2">
         <p className="col text-2xl">Moving Time</p>
         <p className="col ml-4 text-2xl">{formData.time}</p>
+        {/* <Button type="submit">Accept</Button> */}
       </div>
 
       <div className="row flex my-3">
         <p className="col text-2xl">Total:</p>
-        <p className="col ml-4 text-2xl">Ksh. {parseInt(formData.distance.slice(0,2) * 300)}</p>
+        <p className="col ml-4 text-2xl">{formData.cost}</p>
       </div>
 
       {/* <div className="row flex my-3">

@@ -6,9 +6,6 @@ import Quotation from "./Quotation";
 import Start from "./Start";
 // import "../../../App.css"
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 const Switch = () => {
   const [page, setPage] = useState(0);
   const FormTitles = [
@@ -24,12 +21,11 @@ const Switch = () => {
     destination: "",
     mover: "",
     distance: "",
-    house: "",
+    houseSize: "",
     date: "",
     time: "",
-    cost: ""
-
-  })
+    cost: "",
+  });
 
   const PageDisplay = () => {
     if (page === 0) {
@@ -44,11 +40,8 @@ const Switch = () => {
       return <Quotation formData ={formData}/>;
     }
   };
-
-  const notify = () => toast(`Your moving date is ${formData.date} at ${formData.time} from your ${formData.houseSize} apartment.  ${formData.mover} has been notified to transport your belongings from ${formData.origin} to ${formData.destination}. Your total cost will be Ksh. ${formData.total}` );
   return (
-    <div className=" w-4/5 mx-auto">
-      <div className="switchingComponent bg-black text-white">
+    <div className="switchingComponent bg-black text-white">
       <div className="progressbar">
         <div
           style={{
@@ -86,13 +79,12 @@ const Switch = () => {
           className="bg-amber-300 hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-amber-300 hover:border-transparent rounded mx-2"
           onClick={() => {
             if (page === FormTitles.length - 1) {
-              // alert("FORM SUBMITTED");
+              alert("FORM SUBMITTED");
 
-              notify();
               // function handleSubmit() {
               // e
                 // e.preventDefault();
-                fetch("http://localhost:3000/bookings", {
+                fetch("https://nyumbani-move.herokuapp.com/api/bookings", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
@@ -116,9 +108,7 @@ const Switch = () => {
         >
           {page === FormTitles.length - 1 ? "Accept Quote" : "Next"}
         </button>
-        <ToastContainer/>
       </div>
-    </div>
     </div>
   );
 };

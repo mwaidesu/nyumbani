@@ -1,19 +1,19 @@
-import React, {useState, useRef} from 'react'
+import React, { useState, useRef, useEffect } from "react";
 import {
   useJsApiLoader,
   GoogleMap,
   Marker,
-  // Autocomplete,
+  Autocomplete,
   DirectionsRenderer,
 } from "@react-google-maps/api";
 
 import {
   Box,
   Button,
-  ButtonGroup,
+  // ButtonGroup,
   Flex,
-  HStack,
-  IconButton,
+  // HStack,
+  // IconButton,
   Input,
   SkeletonText,
   Text,
@@ -21,19 +21,23 @@ import {
 
 const center = { lat: 1.9577, lng: 37.2972 };
 
-
-
-const Location = ({formData, setFormData}) => {
-  
-
-
-
+const Location = ({ formData, setFormData }) => {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ["places"],
-  }); 
-  
+  });
 
+  const [movers, setMovers] = useState([]);
+
+  useEffect(() => {
+    fetchMoversHandler();
+  }, []);
+
+  async function fetchMoversHandler() {
+    const response = await fetch("https://nyumbani-move.herokuapp.com/api/movers/");
+    const data = await response.json();
+    setMovers(data);
+  }
   const [map, setMap] = useState(/** @type google.maps.Map */ (null));
   const [directionsResponse, setDirectionsResponse] = useState(null);
   const [distance, setDistance] = useState("");
@@ -78,7 +82,7 @@ const Location = ({formData, setFormData}) => {
             Your origin
           </label>
 
-          {/* <Autocomplete> */}
+          <Autocomplete>
             <Input
               type="text"
               id="origin"
@@ -91,7 +95,7 @@ const Location = ({formData, setFormData}) => {
                 setFormData({ ...formData, origin: e.target.value })
               }
             />
-          {/* </Autocomplete> */}
+          </Autocomplete>
         </div>
         <div className="mb-6">
           <label
@@ -100,7 +104,7 @@ const Location = ({formData, setFormData}) => {
           >
             Your destination
           </label>
-          {/* <Autocomplete> */}
+          <Autocomplete>
             <Input
               type="destination"
               id="destination"
@@ -113,27 +117,37 @@ const Location = ({formData, setFormData}) => {
                 setFormData({ ...formData, destination: e.target.value })
               }
             />
-          {/* </Autocomplete> */}
+          </Autocomplete>
         </div>
 
         <label
           for="movers"
           class="block mb-2 text-sm font-medium text-white dark:text-gray-400"
         >
-          Select an option
+          Select a Moving Company
         </label>
-        <select
+        {/* <select
           id="movers"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           value={formData.mover}
-          onChange={(e) =>
-            setFormData({ ...formData, mover: e.target.value })
-          }
+          onChange={(e) => setFormData({ ...formData, mover: e.target.value })}
         >
           <option selected>Choose a moving company</option>
-          <option value="MoversNShakers">MoversNShakers</option>
-          <option value="OfisiMove">OfisiMove</option>
-          <option value="UtahamaLini?">UtahamaLini?</option>
+          <option value="1">1</option>
+          <option value="2">OfisiMove</option>
+          <option value="3">UtahamaLini?</option>
+        </select> */}
+
+        <select
+          value={formData.mover}          
+          onChange={(e) => setFormData({ ...formData, mover: e.target.value })}
+        >
+          <option disabled value="">Click here to select from options</option>
+          {movers.map((item, index) => (
+            <option key={index} value={item.name}>
+              {item.name}
+            </option>
+          ))}
         </select>
 
         {/* <Input
@@ -145,10 +159,10 @@ const Location = ({formData, setFormData}) => {
           }
         >{distance}</Input> */}
 
-        
+        <Text>Distance: {distance}</Text>
 
         <Button
-          className="py-2 px-2 rounded mx-2 mt-4" 
+          className="py-2 px-2 rounded mx-2"
           bg="#F3D34E"
           colorScheme="#FAF3C7"
           textColor="black"
@@ -158,7 +172,6 @@ const Location = ({formData, setFormData}) => {
         >
           See Route
         </Button>
-        <Text className="py-2">Distance: {distance}</Text>
 
         <Flex
           position="relative"
@@ -180,7 +193,7 @@ const Location = ({formData, setFormData}) => {
               // className="z-0"
               center={center}
               zoom={6}
-              mapContainerStyle={{ width: "45%", height: "100%" }}
+              mapContainerStyle={{ width: "60%", height: "100%" }}
               options={{
                 zoomControl: false,
                 streetViewControl: false,
@@ -199,6 +212,6 @@ const Location = ({formData, setFormData}) => {
       </form>
     </>
   );
-}
+};;
 
-export default Location
+export default Location;
