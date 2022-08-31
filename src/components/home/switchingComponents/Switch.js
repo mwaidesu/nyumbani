@@ -6,6 +6,10 @@ import Quotation from "./Quotation";
 import Start from "./Start";
 // import "../../../App.css"
 
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Switch = () => {
   const [page, setPage] = useState(0);
   const FormTitles = [
@@ -40,6 +44,10 @@ const Switch = () => {
       return <Quotation formData ={formData}/>;
     }
   };
+
+  const notify = () => toast("Wow so easy!");
+
+
   return (
     <div className="switchingComponent bg-black text-white">
       <div className="progressbar">
@@ -79,7 +87,9 @@ const Switch = () => {
           className="bg-amber-300 hover:bg-amber-500 text-white font-semibold hover:text-white py-2 px-4 border border-amber-300 hover:border-transparent rounded mx-2"
           onClick={() => {
             if (page === FormTitles.length - 1) {
-              alert("FORM SUBMITTED");
+              // alert("FORM SUBMITTED");
+
+              notify();
 
               // function handleSubmit() {
               // e
@@ -109,6 +119,7 @@ const Switch = () => {
           {page === FormTitles.length - 1 ? "Accept Quote" : "Next"}
         </button>
       </div>
+      <ToastContainer />
     </div>
   );
 };

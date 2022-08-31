@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Button } from "bootstrap";
+// import { Form, Button } from "bootstrap";
+
 
 function Quotation({formData}) {
 
@@ -26,7 +27,7 @@ function Quotation({formData}) {
         <p className="col ml-4 text-2xl">{formData.distance}</p>
       </div>
       <div className="row flex my-3">
-        <p className="col text-2xl">House</p>
+        <p className="col text-2xl">House:</p>
         <p className="col ml-4 text-2xl">{formData.houseSize}</p>
       </div>
 
@@ -43,7 +44,7 @@ function Quotation({formData}) {
 
       <div className="row flex my-3">
         <p className="col text-2xl">Total:</p>
-        <p className="col ml-4 text-2xl">{formData.cost}</p>
+        <p className="col ml-4 text-2xl">Ksh. {formData.cost}</p>
       </div>
 
       {/* <div className="row flex my-3">

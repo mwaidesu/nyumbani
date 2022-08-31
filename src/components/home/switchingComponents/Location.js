@@ -34,7 +34,9 @@ const Location = ({ formData, setFormData }) => {
   }, []);
 
   async function fetchMoversHandler() {
-    const response = await fetch("https://nyumbani-move.herokuapp.com/api/movers/");
+    const response = await fetch(
+      "https://nyumbani-move.herokuapp.com/api/movers/"
+    );
     const data = await response.json();
     setMovers(data);
   }
@@ -139,10 +141,13 @@ const Location = ({ formData, setFormData }) => {
         </select> */}
 
         <select
-          value={formData.mover}          
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"
+          value={formData.mover}
           onChange={(e) => setFormData({ ...formData, mover: e.target.value })}
         >
-          <option disabled value="">Click here to select from options</option>
+          <option disabled value="">
+            Click here to select from options
+          </option>
           {movers.map((item, index) => (
             <option key={index} value={item.name}>
               {item.name}
@@ -159,10 +164,8 @@ const Location = ({ formData, setFormData }) => {
           }
         >{distance}</Input> */}
 
-        <Text>Distance: {distance}</Text>
-
         <Button
-          className="py-2 px-2 rounded mx-2"
+          className="py-2 px-2 rounded mx-2 my-2"
           bg="#F3D34E"
           colorScheme="#FAF3C7"
           textColor="black"
@@ -172,6 +175,8 @@ const Location = ({ formData, setFormData }) => {
         >
           See Route
         </Button>
+
+        <Text>Distance: {distance}</Text>
 
         <Flex
           position="relative"
@@ -193,7 +198,7 @@ const Location = ({ formData, setFormData }) => {
               // className="z-0"
               center={center}
               zoom={6}
-              mapContainerStyle={{ width: "60%", height: "100%" }}
+              mapContainerStyle={{ width: "45%", height: "100%" }}
               options={{
                 zoomControl: false,
                 streetViewControl: false,
@@ -212,6 +217,6 @@ const Location = ({ formData, setFormData }) => {
       </form>
     </>
   );
-};;
+};
 
 export default Location;

@@ -34,7 +34,7 @@ const Home = () => {
 
         {/* //moving component/////////////////////// */}
 
-        <div className="mx-auto">
+        <div className="mx-auto w-4/5">
           <Switch/>
         </div>
 
