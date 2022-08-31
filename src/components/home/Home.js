@@ -3,10 +3,12 @@ import Footer from "../footer/Footer";
 import { Navbar } from "../navbar/Navbar";
 import Cards from "./Cards";
 // import Landin from "./Landin";
-import Switch from "./changingComponents/Switch";
+import Switch from "./switchingComponents/Switch";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+// import { Switch } from "react-router-dom";
 
 const Home = () => {
+
   return (
     <div className="bg-amber-100">
       <Navbar />
@@ -30,8 +32,8 @@ const Home = () => {
 
         {/* //moving component/////////////////////// */}
 
-        <div className="w-4/5 mx-auto">
-          <Switch />
+        <div className="mx-auto">
+          <Switch/>
         </div>
 
         <div className="text-center py-9 my-9 bg-white w-4/5 mx-auto">

@@ -5,6 +5,8 @@
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
     "@react-google-maps/api": "^2.7.0",
+    "react-load-script": "^0.0.6",
+    "react-toastify": "^9.0.8",
     "@tawk.to/tawk-messenger-react": "^2.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",

@@ -42,7 +42,7 @@ function App() {
     }).then((r) => {
       return r.json();
     })
-    .then(data=>console.log(data));
+    // .then(data=>console.log(data));
   }
 
   async function signupCallback(name, email, phone, password) {
