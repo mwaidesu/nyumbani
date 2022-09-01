@@ -34,7 +34,12 @@ console.log(res)
         setAuth(newState);
         localStorage.setItem("auth", newState);
 
+        if(res.is_admin){
+          history.push("/admin")
+        }else
         history.push("/home");
+        
+
       } else if (res.errors) {
         setError(res.errors);
       }

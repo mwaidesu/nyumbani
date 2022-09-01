@@ -11,7 +11,7 @@ import Landin from "./components/home/Landin";
 // import Admin from "./components"
 
 // import FourOhFour from "./components/FourOhFour";
-// import Admin from "./components/admin/Admin";
+import Admin from "./components/admin/Admin";
 
 function App() {
   const [auth, setAuth] = useState({
@@ -97,7 +97,7 @@ function App() {
                 <Route exact path="/" component={Landin} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/signin" component={Signin} />
-                {/* <AdminRoute path="/admin" component={Admin} /> */}
+                <Route path="/admin" component={Admin} />
               </Switch>
             </Router>
           </main>
