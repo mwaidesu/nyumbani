@@ -1,5 +1,5 @@
 import React from 'react'
-// import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Sidebar from './Sidebar'
 import MainDash from './MainDash/MainDash'
 import RightSide from './RigtSide/RightSide'
@@ -7,7 +7,7 @@ import './Admin.css'
 
 function Admin() {
   return (
-    // <Router>
+    <Router>
     <div className="admin-main">
       <div className="AppGlass">
         <Sidebar/>
@@ -15,7 +15,7 @@ function Admin() {
         <RightSide/>
       </div>
     </div>
-    // </Router>
+    </Router>
   )
 }
 
