@@ -35,7 +35,8 @@ const Location = ({ formData, setFormData }) => {
 
   async function fetchMoversHandler() {
     const response = await fetch(
-      "https://nyumbani-move.herokuapp.com/api/movers/"
+      // "https://nyumbani-move.herokuapp.com/api/movers/"
+      
     );
     const data = await response.json();
     setMovers(data);

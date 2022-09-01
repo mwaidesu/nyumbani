@@ -20,7 +20,7 @@ function Quotation({formData}) {
       </div>
       <div className="row flex mb-2">
         <p className="col text-2xl">Mover: </p>
-        <p className="col ml-4 text-2xl">{formData.mover_id}</p>
+        <p className="col ml-4 text-2xl">{formData.mover_}</p>
       </div>
 
       <div className="row flex mb-2">

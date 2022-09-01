@@ -142,10 +142,8 @@ const Location = ({ formData, setFormData }) => {
 
         <select
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"
-          value={formData.mover}
-          onChange={(e) =>
-            setFormData({ ...formData, mover_id: e.target.value })
-          }
+          value={formData.mover_id}
+          onChange={(e) => setFormData({ ...formData, mover: e.target.value })}
         >
           <option disabled value="">
             Click here to select from options

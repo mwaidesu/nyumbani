@@ -94,8 +94,8 @@ const Switch = () => {
               // function handleSubmit() {
               // e
                 // e.preventDefault();
-                fetch("https://nyumbani-move.herokuapp.com/api/bookings", {
-                // fetch("http://localhost:3000/api/bookings", { //localhost link
+                // fetch("https://nyumbani-move.herokuapp.com/api/bookings", {
+                fetch("http://localhost:3000/api/bookings", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",

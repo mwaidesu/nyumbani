@@ -6,7 +6,6 @@ function Quotation({formData}) {
 
   console.log(formData);
   formData.cost = parseInt(formData.distance.slice(0,2) *300)
-  formData.user_id = parseInt(1);
   return (
     <div className="quote">
       {/* <h3 className="mb-4">Quotation</h3> */}
@@ -20,7 +19,7 @@ function Quotation({formData}) {
       </div>
       <div className="row flex mb-2">
         <p className="col text-2xl">Mover: </p>
-        <p className="col ml-4 text-2xl">{formData.mover_id}</p>
+        <p className="col ml-4 text-2xl">{formData.mover}</p>
       </div>
 
       <div className="row flex mb-2">
@@ -46,10 +45,6 @@ function Quotation({formData}) {
       <div className="row flex my-3">
         <p className="col text-2xl">Total:</p>
         <p className="col ml-4 text-2xl">Ksh. {formData.cost}</p>
-      </div>
-      <div className="row flex my-3">
-        <p className="col text-2xl">User_id:</p>
-        <p className="col ml-4 text-2xl">{formData.user_id}</p>
       </div>
 
       {/* <div className="row flex my-3">
