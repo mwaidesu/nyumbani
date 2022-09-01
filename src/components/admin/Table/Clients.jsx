@@ -46,7 +46,7 @@ const makeStyle=(status)=>{
 export default function Clients() {
   const [rows, setRows] = useState([])
   useEffect(()=>{
-      fetch('http://localhost:3000/api/users')
+      fetch('https://nyumbani-move.herokuapp.com/api/users')
       .then(res=>res.json())
       .then(data=>{
           setRows(data)

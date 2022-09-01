@@ -18,7 +18,7 @@ function Quotation({formData}) {
         <p className="col text-2xl">Destination: </p>
         <p className="col ml-4 text-2xl">{formData.destination}</p>
       </div>
-      <div className="row flex mb-2">
+      <div className="row flex mb-2 hidden">
         <p className="col text-2xl">Mover: </p>
         <p className="col ml-4 text-2xl">{formData.mover_id}</p>
       </div>
@@ -47,7 +47,7 @@ function Quotation({formData}) {
         <p className="col text-2xl">Total:</p>
         <p className="col ml-4 text-2xl">Ksh. {formData.cost}</p>
       </div>
-      <div className="row flex my-3">
+      <div className="row flex my-3 hidden">
         <p className="col text-2xl">User_id:</p>
         <p className="col ml-4 text-2xl">{formData.user_id}</p>
       </div>

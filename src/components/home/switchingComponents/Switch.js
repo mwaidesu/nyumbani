@@ -45,7 +45,7 @@ const Switch = () => {
     }
   };
 
-  const notify = () => toast(`Your moving date is ${formData.date} at ${formData.time}. ${formData.mover} has been notified and will transport your belongings from ${formData.origin} to ${formData.destination}. Your total cost will be Ksh. ${formData.cost}`);
+  const notify = () => toast(`Your moving date is ${formData.date} at ${formData.time}. Your mover has been notified and will transport your belongings from ${formData.origin} to ${formData.destination}. Your total cost will be Ksh. ${formData.cost}`);
 
 
   return (

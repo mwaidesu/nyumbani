@@ -51,7 +51,7 @@ export default function Movers() {
     const [rows, setRows] = useState([])
     const [update, setUpdate] = useState(false)
     useEffect(()=>{
-        fetch('http://localhost:3000/api/movers')
+        fetch('https://nyumbani-move.herokuapp.com/api/movers')
         .then(res=>res.json())
         .then(data=>{
             setRows(data)
@@ -63,7 +63,7 @@ export default function Movers() {
     function approveMover(id){
         console.log(id);
         console.log("Approved");
-        fetch(`http://localhost:3000/api/movers/${id}`,{
+        fetch(`'https://nyumbani-move.herokuapp.com/api/movers'${id}`,{
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
