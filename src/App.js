@@ -12,8 +12,15 @@ import Landin from "./components/home/Landin";
 
 // import FourOhFour from "./components/FourOhFour";
 import Admin from "./components/admin/Admin";
+import OneSignal from 'react-onesignal';
 
 function App() {
+  useEffect(() => {
+    OneSignal.init({
+      appId: "2d412087-1c84-44ba-89bf-14ce5e4211d5"
+    });
+  }, []);
+  
   const [auth, setAuth] = useState({
     name: null,
     email: null,
